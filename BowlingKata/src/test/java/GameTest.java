@@ -76,5 +76,16 @@ public class GameTest {
         assertThat(game.score()).isEqualTo(24);
     }
 
+    @Test
+    public void should_return_score_300_when_perfect_game() {
+        //Given
+
+        //When
+        rollMany(12, 10);
+
+        //Then
+        assertThat(game.score()).isEqualTo(300);
+    }
+
 
 }

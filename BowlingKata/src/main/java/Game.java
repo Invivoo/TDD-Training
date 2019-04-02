@@ -14,8 +14,7 @@ public class Game {
             if(isStrike(rollIndex)) {
                 score += 10 + strikeBonus(rollIndex);
                 rollIndex++;
-            }
-            if (isSpare(rollIndex)) {
+            } else if (isSpare(rollIndex)) {
                 score += 10 + spareBonus(rollIndex);
                 rollIndex += 2;
             } else {
