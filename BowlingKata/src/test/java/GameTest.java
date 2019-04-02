@@ -39,4 +39,18 @@ public class GameTest {
         //Then
         assertThat(game.score()).isEqualTo(20);
     }
+
+    @Test
+    public void should_return_score_16_when_spare_and_roll_of_3_pins() {
+        //Given
+
+        //When
+        game.roll(5);
+        game.roll(5);
+        game.roll(3);
+        rollMany(17, 0);
+
+        //Then
+        assertThat(game.score()).isEqualTo(16);
+    }
 }
