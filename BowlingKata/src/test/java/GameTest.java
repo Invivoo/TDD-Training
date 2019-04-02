@@ -12,16 +12,18 @@ public class GameTest {
         game = new Game();
     }
 
+    private void rollMany(int nbRolls, int pins) {
+        for (int i = 0; i < nbRolls; i++) {
+            game.roll(pins);
+        }
+    }
+
     @Test
     public void should_return_score_0_when_20_rolls_of_0_pin() {
         //Given
 
         //When
-        int nbRolls = 20;
-        int pins = 0;
-        for (int i = 0; i < nbRolls; i++) {
-            game.roll(pins);
-        }
+        rollMany(20, 0);
 
         //Then
         assertThat(game.score()).isEqualTo(0);
@@ -32,11 +34,7 @@ public class GameTest {
         //Given
 
         //When
-        int nbRolls = 20;
-        int pins = 1;
-        for (int i = 0; i < nbRolls; i++) {
-            game.roll(pins);
-        }
+        rollMany(20, 1);
 
         //Then
         assertThat(game.score()).isEqualTo(20);
