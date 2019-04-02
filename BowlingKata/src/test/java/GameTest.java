@@ -23,6 +23,10 @@ public class GameTest {
         game.roll(5);
     }
 
+    private void rollStrike() {
+        game.roll(10);
+    }
+
     @Test
     public void should_return_score_0_when_20_rolls_of_0_pin() {
         //Given
@@ -63,7 +67,7 @@ public class GameTest {
         //Given
 
         //When
-        game.roll(10);
+        rollStrike();
         game.roll(3);
         game.roll(4);
         rollMany(16, 0);
@@ -71,5 +75,6 @@ public class GameTest {
         //Then
         assertThat(game.score()).isEqualTo(24);
     }
+
 
 }
