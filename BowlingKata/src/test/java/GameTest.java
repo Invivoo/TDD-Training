@@ -58,4 +58,18 @@ public class GameTest {
         assertThat(game.score()).isEqualTo(16);
     }
 
+    @Test
+    public void should_return_score_24_when_strike_and_rolls_of_3_and_4_pins() {
+        //Given
+
+        //When
+        game.roll(10);
+        game.roll(3);
+        game.roll(4);
+        rollMany(16, 0);
+
+        //Then
+        assertThat(game.score()).isEqualTo(24);
+    }
+
 }
