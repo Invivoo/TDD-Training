@@ -19,11 +19,15 @@ public class Game {
                 score += 10 + rolls[rollIndex + 2];
                 rollIndex += 2;
             } else {
-                score += rolls[rollIndex] + rolls[rollIndex + 1];
+                score += frameScore(rollIndex);
                 rollIndex += 2;
             }
         }
         return score;
+    }
+
+    private int frameScore(int rollIndex) {
+        return rolls[rollIndex] + rolls[rollIndex + 1];
     }
 
     private boolean isStrike(int rollIndex) {
