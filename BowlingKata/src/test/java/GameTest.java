@@ -18,6 +18,11 @@ public class GameTest {
         }
     }
 
+    private void rollSpare() {
+        game.roll(5);
+        game.roll(5);
+    }
+
     @Test
     public void should_return_score_0_when_20_rolls_of_0_pin() {
         //Given
@@ -45,12 +50,12 @@ public class GameTest {
         //Given
 
         //When
-        game.roll(5);
-        game.roll(5);
+        rollSpare();
         game.roll(3);
         rollMany(17, 0);
 
         //Then
         assertThat(game.score()).isEqualTo(16);
     }
+
 }
