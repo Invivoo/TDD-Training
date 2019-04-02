@@ -17,8 +17,10 @@ public class GameTest {
         //Given
 
         //When
-        for (int i = 0; i < 20; i++) {
-            game.roll(0);
+        int nbRolls = 20;
+        int pins = 0;
+        for (int i = 0; i < nbRolls; i++) {
+            game.roll(pins);
         }
 
         //Then
@@ -30,8 +32,10 @@ public class GameTest {
         //Given
 
         //When
-        for (int i = 0; i < 20; i++) {
-            game.roll(1);
+        int nbRolls = 20;
+        int pins = 1;
+        for (int i = 0; i < nbRolls; i++) {
+            game.roll(pins);
         }
 
         //Then
