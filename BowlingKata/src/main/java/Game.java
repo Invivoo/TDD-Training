@@ -16,7 +16,7 @@ public class Game {
                 rollIndex++;
             }
             if (isSpare(rollIndex)) {
-                score += 10 + rolls[rollIndex + 2];
+                score += 10 + spareBonus(rollIndex);
                 rollIndex += 2;
             } else {
                 score += frameScore(rollIndex);
@@ -24,6 +24,10 @@ public class Game {
             }
         }
         return score;
+    }
+
+    private int spareBonus(int rollIndex) {
+        return rolls[rollIndex + 2];
     }
 
     private int frameScore(int rollIndex) {
