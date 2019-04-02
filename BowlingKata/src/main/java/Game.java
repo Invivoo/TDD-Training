@@ -12,7 +12,7 @@ public class Game {
         int rollIndex = 0;
         for (int frame = 0; frame < 10; frame++) {
             if(isStrike(rollIndex)) {
-                score += 10 + rolls[rollIndex + 1] + rolls[rollIndex + 2];
+                score += 10 + strikeBonus(rollIndex);
                 rollIndex++;
             }
             if (isSpare(rollIndex)) {
@@ -24,6 +24,10 @@ public class Game {
             }
         }
         return score;
+    }
+
+    private int strikeBonus(int rollIndex) {
+        return rolls[rollIndex + 1] + rolls[rollIndex + 2];
     }
 
     private int spareBonus(int rollIndex) {
