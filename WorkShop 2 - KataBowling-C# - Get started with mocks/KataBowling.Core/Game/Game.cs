@@ -1,6 +1,6 @@
 ﻿namespace KataBowling.Core.Game
 {
-    public class Game :IGame
+    public class Game
     {
         private readonly int[] _rolls = new int[21];
         private int _currentRoll;
